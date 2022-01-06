@@ -19,19 +19,24 @@ public class Employee implements Serializable
 	private Long id;
 	private String name;
 	private String email;
-	private String jobTitleString;
+	private String jobTitle;
 	private String phoneNum;
 	private String imageURL;
 	
 	@Column(nullable = false, updatable = false)
 	private String employeeCode;
+	
+	public Employee()
+	{
+		
+	}
 
-	public Employee(Long id, String name, String email, String jobTitleString, String phoneNum, String imageURL,
+	public Employee(Long id, String name, String email, String jobTitle, String phoneNum, String imageURL,
 			String employeeCode)
 	{
 		this.name = name;
 		this.email = email;
-		this.jobTitleString = jobTitleString;
+		this.jobTitle = jobTitle;
 		this.phoneNum = phoneNum;
 		this.imageURL = imageURL;
 		this.employeeCode = employeeCode;
@@ -67,14 +72,14 @@ public class Employee implements Serializable
 		this.email = email;
 	}
 
-	public String getJobTitleString() 
+	public String getJobTitle() 
 	{
-		return jobTitleString;
+		return jobTitle;
 	}
 
-	public void setJobTitleString(String jobTitleString) 
+	public void setJobTitleString(String jobTitle) 
 	{
-		this.jobTitleString = jobTitleString;
+		this.jobTitle = jobTitle;
 	}
 
 	public String getPhoneNum() {
@@ -109,7 +114,7 @@ public class Employee implements Serializable
 	@Override
 	public String toString()
 	{
-		return "Employee [id=" + id + ", name=" + name + ", email=" + email + ", jobTitleString=" + jobTitleString
+		return "Employee [id=" + id + ", name=" + name + ", email=" + email + ", jobTitle=" + jobTitle
 				+ ", phoneNum=" + phoneNum + ", imageURL=" + imageURL + ", employeeCode=" + employeeCode + "]";
 	}
 	
